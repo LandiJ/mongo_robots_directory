@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="main.css" />
+
+</head>
+
+<body>
+
+    <a href="./hire">Available for Hire</a>
+    <a href="./employed">Employed</a>
+
+
+
+
+    <div class="data-results">
+        {{#users}}
+        <div class="data-box">
+
+            <img src={{avatar}}>
+            <p class="name">{{name}}</p>
+            {{#job}}
+            <p>{{job}}</p>
+            <p>{{company}}</p>
+            {{/job}} {{^job}}
+            <p class="unemployed">Available for Hire</p>
+            {{/job}}
+
+        </div>
+        {{/users}}
+
+    </div>
+    <div class="bottom-results">
+        {{#users}}
+        <div class="bottom-boxes">
+
+            <div class="pic-and-info">
+                <img class="bottom-pic" src={{avatar}}>
+                <div class="info">
+                    <p class="bottom-name">{{name}}</p>
+                    <div class="address">
+                        <p>{{#address.city}} {{address.city}}, {{/address.city}} {{address.country}} | {{#job}} {{job}},{{company}}
+                            {{/job}}{{^job}}
+                            <span style="color: red">Available for Hire</span>{{/job}}</p>
+                        <p>{{email}} | {{phone}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ed_skills">
+                <div class="ed">
+
+                    {{#university}}
+                    <div><b>Education</b></div>
+                    <div class="space">{{university}} </div>{{/university}}
+
+                </div>
+                <div class="skills">
+                    <div id="skillString"><b>Skills</b></div>
+                    <div class="space">{{#skills}}
+                        <li> {{.}}<br></li>
+                        {{/skills}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/users}}
+    </div>
+
+    </div>

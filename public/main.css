@@ -1,0 +1,69 @@
+.data-results {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.data-box {
+    border: 1px solid gray;
+    flex: 1;
+    margin: 2rem;
+    line-height: 15px;
+    padding: 0rem 1rem 0rem 1rem;
+}
+
+.name {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    text-transform: capitalize;
+    color: blue;
+}
+
+.unemployed {
+    color: red;
+}
+
+.bottom-boxes {
+    margin: 2rem;
+}
+
+.bottom-pic {
+    border-radius: 100%;
+    border: 1px solid lightslategray;
+    margin-right: 3rem;
+    float: left;
+}
+
+.bottom-name {
+    font-size: 50px;
+}
+
+.address {
+    position: relative;
+    bottom: 2.5rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.skills {
+    display: flex;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    font-size: larger;
+}
+
+li {
+    list-style: none;
+}
+
+.ed {
+    display: flex;
+    margin-top: 2rem;
+    font-size: larger;
+}
+
+.space {
+    margin-left: 2rem;
+}
+
+.ed_skills {
+    margin-left: 3rem;
+}
