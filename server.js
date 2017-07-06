@@ -35,33 +35,10 @@ app.get("/robotsusers", (req, res) => {
     }
 
     res.render("index", { users: foundUsers });
-    // res.send(foundUsers);
   });
 });
 
-app.get("/robotsusers/:id", (req, res) => {
-  ROBOTSUSERS.findOne({ _id: ObjectId(req.params.id) }, function(
-    err,
-    foundUser
-  ) {
-    if (err) {
-      res.status(500).send(err);
-    }
-
-    res.send(foundUser);
-  });
-});
-
-app.get("/hire", function(req, res) {
-  ROBOTSUSERS.find({ job: null }).toArray(function(err, foundUsers) {
-    if (err) {
-      res.status(500).send(err);
-    }
-
-    res.render("index", { users: foundUsers });
-    // res.send(foundUsers);
-  });
-});
+// Employed and Unemployed Routes
 app.get("/employed", function(req, res) {
   ROBOTSUSERS.find({ job: { $nin: [null] } }).toArray(function(
     err,
@@ -72,7 +49,16 @@ app.get("/employed", function(req, res) {
     }
 
     res.render("index", { users: foundUsers });
-    // res.send(foundUsers);
+  });
+});
+
+app.get("/hire", function(req, res) {
+  ROBOTSUSERS.find({ job: null }).toArray(function(err, foundUsers) {
+    if (err) {
+      res.status(500).send(err);
+    }
+
+    res.render("index", { users: foundUsers });
   });
 });
 
