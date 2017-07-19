@@ -38,6 +38,19 @@ app.get("/robotsusers", (req, res) => {
   });
 });
 
+app.get("/robotsusers/:id", (req, res) => {
+  ROBOTSUSERS.findOne({ _id: ObjectId(req.params.id) }).then(function(
+    err,
+    foundUser
+  ) {
+    if (err) {
+      res.status(500).send(err);
+    }
+
+    res.send(foundUser);
+  });
+});
+
 // Employed and Unemployed Routes
 app.get("/employed", function(req, res) {
   ROBOTSUSERS.find({ job: { $nin: [null] } }).toArray(function(
